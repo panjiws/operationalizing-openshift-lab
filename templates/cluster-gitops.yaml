@@ -35,7 +35,7 @@ objects:
       contextDir: ${CLUSTER_CONFIG_REPO_DIR}
     triggers:
     - type: Change
-    #- type: Periodic
+    - type: Periodic
       #cron: '*/1 * * * *'
     serviceAccountRef: eunomia-runner
     templateProcessorImage: ${TEMPLATE_PROCESSOR_IMAGE}
@@ -52,3 +52,6 @@ parameters:
   value: ''
 - name: TEMPLATE_PROCESSOR_IMAGE
   value: quay.io/kohlstechnology/eunomia-applier:v0.0.1
+- name: SCHEDULE
+  description: Periodic scheludle for gitops processing
+  value: "@hourly"
